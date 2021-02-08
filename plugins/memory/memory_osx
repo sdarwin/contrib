@@ -36,7 +36,7 @@ if [ "$1" = "autoconf" ]; then
 fi
 
 TOTALMEM=$(sysctl hw.memsize | cut -d" " -f2)
-graphlimit=$(( $TOTALMEM/1048576 ))
+graphlimit=$(( TOTALMEM/1048576 ))
 
 dehumanise_to_M() {
     echo "$1" | sed -e "s/K/\/1024/g;s/M//;s/G/*1024/;s/T/*1024*1024/"
