@@ -28,7 +28,7 @@ GPLv2
 =cut
 
 if [ "$1" = "autoconf" ]; then
-    if [ "$(uname)" == "Darwin" ]; then
+    if [ "$(uname)" = "Darwin" ]; then
         echo yes
         exit 0
     else
@@ -46,7 +46,7 @@ else
 fi
 
 if [ "$1" = "config" ]; then
-        graphlimit=$(( $NCPU*100 ))
+        graphlimit=$(( NCPU*100 ))
         echo 'graph_title CPU usage'
         echo "graph_order system user idle"
         echo "graph_args --base 1000 -r --lower-limit 0 --upper-limit $graphlimit"
